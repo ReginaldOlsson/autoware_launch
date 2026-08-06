@@ -9,6 +9,7 @@
   <!-- launch module preset -->
   <arg name="planning_module_preset" default="default" description="planning module preset"/>
   <arg name="control_module_preset" default="default" description="control module preset"/>
+  <arg name="freespace_backend" default="legacy" description="parking freespace planner backend: legacy | moveit"/>
 
   <!-- Optional parameters -->
   <!-- Map -->
@@ -86,6 +87,7 @@
       <!-- Auto mode setting-->
       <arg name="enable_all_modules_auto_mode" value="$(var enable_all_modules_auto_mode)"/>
       <arg name="is_simulation" value="true"/>
+      <arg name="freespace_backend" value="$(var freespace_backend)"/>
     </include>
   </group>
 

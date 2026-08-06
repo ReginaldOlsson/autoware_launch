@@ -12,6 +12,8 @@
   <!-- Input topic parameters for planning modules -->
   <arg name="planning_input_objects_topic_name" default="/perception/object_recognition/objects"/>
   <arg name="planning_input_pointcloud_topic_name" default="/perception/obstacle_segmentation/pointcloud"/>
+  <!-- parking freespace planner backend: legacy | moveit -->
+  <arg name="freespace_backend" default="legacy"/>
 
   <!-- Diffusion Planner Trajectory Optimizer Plugins-->
   <let name="neural_net_planner_config_path" value="$(find-pkg-share autoware_launch)/config/planning/neural_net_planner"/>
@@ -96,7 +98,9 @@
     <arg name="compare_map_filter_param_path" value="$(find-pkg-share autoware_launch)/config/perception/object_recognition/detection/pointcloud_filter/pointcloud_map_filter.param.yaml"/>
 
     <!-- parking -->
+    <arg name="freespace_backend" value="$(var freespace_backend)"/>
     <arg name="freespace_planner_param_path" value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/parking/freespace_planner/freespace_planner.param.yaml"/>
+    <arg name="moveit_freespace_planner_param_path" value="$(find-pkg-share autoware_moveit_freespace_planner)/config/freespace_planner.param.yaml"/>
 
     <!-- motion -->
     <arg name="motion_config_path" value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/motion_planning"/>

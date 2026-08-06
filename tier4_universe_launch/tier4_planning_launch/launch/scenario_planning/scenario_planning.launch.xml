@@ -10,6 +10,10 @@
   <!-- Input topic parameters -->
   <arg name="input_objects_topic_name"/>
   <arg name="input_pointcloud_topic_name"/>
+  <!-- parking freespace backend: legacy | moveit -->
+  <arg name="freespace_backend" default="legacy"/>
+  <arg name="freespace_planner_param_path"/>
+  <arg name="moveit_freespace_planner_param_path" default="$(find-pkg-share autoware_moveit_freespace_planner)/config/freespace_planner.param.yaml"/>
   <!-- scenario selector -->
   <group>
     <include file="$(find-pkg-share autoware_scenario_selector)/launch/scenario_selector.launch.xml">
@@ -79,6 +83,9 @@
     <group>
       <include file="$(find-pkg-share tier4_planning_launch)/launch/scenario_planning/parking.launch.xml">
         <arg name="container_type" value="component_container_mt"/>
+        <arg name="freespace_backend" value="$(var freespace_backend)"/>
+        <arg name="freespace_planner_param_path" value="$(var freespace_planner_param_path)"/>
+        <arg name="moveit_freespace_planner_param_path" value="$(var moveit_freespace_planner_param_path)"/>
       </include>
     </group>
   </group>
