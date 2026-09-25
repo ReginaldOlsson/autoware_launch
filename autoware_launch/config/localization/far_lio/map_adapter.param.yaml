@@ -1,0 +1,12 @@
+/**:
+  ros__parameters:
+    # Radius of the partial point-cloud map requested from the map loader. [m]
+    map_radius: 150.0
+
+    # Reload the FAR-LIO map after the vehicle moves this far from the last center. [m]
+    update_distance: 20.0
+
+    partial_map_service: /map/get_partial_pointcloud_map
+    initial_map_service: /localization/far_lio/get_pointcloud_map
+    update_map_service: /localization/far_lio/update_pointcloud_map
+    shm_dir: /dev/shm

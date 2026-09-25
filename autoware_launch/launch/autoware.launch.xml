@@ -96,8 +96,11 @@
   </group>
 
   <!-- Localization -->
+  <arg name="pose_source" default="ndt" description="localization pose source: ndt or far_lio. far_lio keeps NDT particle alignment for initialization."/>
   <group if="$(var launch_localization)">
-    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_localization_component.launch.xml"/>
+    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_localization_component.launch.xml">
+      <arg name="pose_source" value="$(var pose_source)"/>
+    </include>
   </group>
 
   <!-- Perception -->

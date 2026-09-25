@@ -18,6 +18,7 @@
   <arg name="map" default="true" description="launch map"/>
   <arg name="sensing" default="true" description="launch sensing"/>
   <arg name="localization" default="true" description="launch localization"/>
+  <arg name="pose_source" default="ndt" description="localization pose source: ndt or far_lio"/>
   <arg name="perception" default="true" description="launch perception"/>
   <arg name="planning" default="true" description="launch planning"/>
   <arg name="control" default="true" description="launch control"/>
@@ -50,6 +51,7 @@
       <arg name="launch_map" value="$(var map)"/>
       <arg name="launch_sensing" value="$(var sensing)"/>
       <arg name="launch_localization" value="$(var localization)"/>
+      <arg name="pose_source" value="$(var pose_source)"/>
       <arg name="launch_perception" value="$(var perception)"/>
       <arg name="launch_planning" value="$(var planning)"/>
       <arg name="launch_control" value="$(var control)"/>

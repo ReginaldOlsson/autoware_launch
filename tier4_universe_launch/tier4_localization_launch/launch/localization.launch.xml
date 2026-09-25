@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="pose_source" description="A string consisting of ndt, yabloc, artag and eagleye joined by underscores no matter the order. e.g. ndt_yabloc"/>
+  <arg name="pose_source" description="Pose estimator token: ndt, far_lio, yabloc, artag, eagleye, or lidar-marker. far_lio keeps NDT for initialization. Tokens can be joined by underscores."/>
   <arg name="twist_source"/>
   <arg name="initial_pose"/>
   <arg name="system_run_mode"/>
@@ -10,6 +10,10 @@
   <arg name="ndt_scan_matcher/pointcloud_preprocessor/voxel_grid_downsample_filter_param_path"/>
   <arg name="ndt_scan_matcher/pointcloud_preprocessor/random_downsample_filter_param_path"/>
   <arg name="ndt_scan_matcher/ndt_scan_matcher_param_path"/>
+
+  <!-- parameter paths for far_lio -->
+  <arg name="far_lio_param_path"/>
+  <arg name="far_lio_map_adapter_param_path"/>
 
   <!-- Parameter files -->
   <arg name="localization_error_monitor_param_path"/>

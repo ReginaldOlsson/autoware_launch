@@ -61,6 +61,8 @@ publishers:
 param_files: []
 
 param_values:
+  # Tokens: ndt, yabloc, artag, eagleye, lidar-marker, far_lio.
+  # far_lio keeps NDT particle alignment for initialization and uses FAR-LIO at runtime.
   - name: pose_source
     default: ndt
   - name: ndt_enabled

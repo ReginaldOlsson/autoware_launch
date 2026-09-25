@@ -46,6 +46,7 @@
   <!-- Simulated time -->
   <arg name="use_sim_time" default="$(var scenario_simulation)"/>
   <!-- Localization-->
+  <arg name="pose_source" default="ndt" description="localization pose source: ndt or far_lio. Unused while launch_localization is false."/>
   <arg
     name="localization_sim_mode"
     default="api"
@@ -69,6 +70,7 @@
       <!-- Modules to be launched -->
       <arg name="launch_sensing" value="false"/>
       <arg name="launch_localization" value="false"/>
+      <arg name="pose_source" value="$(var pose_source)"/>
       <arg name="launch_perception" value="false"/>
       <!-- Vehicle -->
       <arg name="launch_vehicle_interface" value="$(var launch_vehicle_interface)"/>

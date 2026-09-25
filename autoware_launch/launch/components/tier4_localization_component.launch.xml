@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="loc_config_path" default="$(find-pkg-share autoware_launch)/config/localization"/>
-  <arg name="pose_source" default="ndt" description="select pose_estimator: ndt, yabloc, eagleye"/>
+  <arg name="pose_source" default="ndt" description="select pose_estimator: ndt, far_lio, yabloc, eagleye. far_lio uses NDT only to initialize."/>
   <arg name="twist_source" default="gyro_odom" description="select twist_estimator. gyro_odom, eagleye"/>
   <arg name="input_pointcloud" default="/sensing/lidar/concatenated/pointcloud" description="The topic will be used in the localization util module"/>
   <arg name="localization_pointcloud_container_name" default="/pointcloud_container" description="The target container to which pointcloud preprocessing nodes in localization be attached"/>
@@ -87,6 +87,10 @@
 
       <!-- parameter path for ar_tag_based_localizer -->
       <arg name="ar_tag_based_localizer_param_path" value="$(var loc_config_path)/ar_tag_based_localizer.param.yaml"/>
+
+      <!-- parameter paths for far_lio -->
+      <arg name="far_lio_param_path" value="$(var loc_config_path)/far_lio/far_lio.param.yaml"/>
+      <arg name="far_lio_map_adapter_param_path" value="$(var loc_config_path)/far_lio/map_adapter.param.yaml"/>
     </include>
   </group>
 </launch>
