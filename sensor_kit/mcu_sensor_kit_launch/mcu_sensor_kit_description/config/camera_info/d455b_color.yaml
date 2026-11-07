@@ -1,0 +1,22 @@
+# Source topic: /d455b/color/image_raw
+# radtan distortion from atv_calib.yaml, stored as ROS plumb_bob with k3 = 0.
+image_width: 640
+image_height: 480
+camera_name: d455b_color
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [383.9298163755, 0.0, 322.8111121991, 0.0, 382.9589851049, 250.9729552053, 0.0, 0.0, 1.0]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.0440647181, 0.0404362929, -0.0000012131, 0.0018435172, 0.0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [383.9298163755, 0.0, 322.8111121991, 0.0, 0.0, 382.9589851049, 250.9729552053, 0.0, 0.0, 0.0, 1.0, 0.0]

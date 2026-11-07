@@ -1,0 +1,11 @@
+# atv_calib.yaml expresses every sensor in the VN-100 body frame.
+# sensor_kit_base_link is that body. Identity here treats base_link as the
+# VN-100 until a rear-axle offset is measured.
+base_link:
+  sensor_kit_base_link:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0

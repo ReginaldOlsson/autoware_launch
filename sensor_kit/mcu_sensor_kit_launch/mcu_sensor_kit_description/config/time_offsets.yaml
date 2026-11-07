@@ -1,0 +1,8 @@
+# timeshift_cam_imu from atv_calib.yaml, in seconds.
+# Positive means the camera stamp is ahead of the VN-100 IMU stamp.
+# These values are not applied by the static TF tree.
+d435i_infra1: -0.0045172311
+d435i_infra2: -0.0045169276
+d455b_color: -0.0009076169
+d455b_infra1: 0.0030061904
+d455b_infra2: 0.0028156898

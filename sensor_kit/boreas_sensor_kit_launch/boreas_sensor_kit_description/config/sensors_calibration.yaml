@@ -1,0 +1,11 @@
+# The Boreas rosbag places base_link at the lidar origin, 0.13 m above the
+# Applanix frame. Keep the sensor kit on that same origin so lidar clouds and
+# the ground-truth map share one vehicle frame.
+base_link:
+  sensor_kit_base_link:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Static transforms come from mcu_sensor_kit_description. Device drivers are started outside this kit. -->
+  <arg name="launch_driver" default="true" description="accepted by tier4_sensing_launch; drivers are not started by this kit"/>
+  <arg name="vehicle_mirror_param_file" default="" description="accepted by tier4_sensing_launch"/>
+  <arg name="pointcloud_container_name" default="pointcloud_container" description="accepted by tier4_sensing_launch"/>
+</launch>

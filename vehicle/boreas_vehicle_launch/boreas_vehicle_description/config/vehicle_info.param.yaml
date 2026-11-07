@@ -1,0 +1,24 @@
+/**:
+  ros__parameters:
+    # Ground to the Applanix, Figure 8 of Burnett et al., arXiv 2203.10168.
+    # Includes the roof rack. Stock Encore body height is about 1.66 m and is not used here.
+    # The figure's lidar and radar offsets stay in the sensor kit (calibrated transforms).
+    vehicle_height: 1.92
+
+    # Wheel encoder (DMI) lever arm in the Applanix frame, from the Boreas data guide.
+    # This locates the rear-left encoder, not the axle. y matches half the Encore track.
+    wheel_encoder_lever_arm_x: -0.65
+    wheel_encoder_lever_arm_y: -0.77
+    wheel_encoder_lever_arm_z: 1.80
+
+    # Rough first-gen Buick Encore OEM geometry (e.g. 2022 NHTSA product sheet).
+    # The Boreas paper does not publish these; model year is not stated. Approximate only.
+    wheel_radius: 0.347      # P215/55R18: 18 in / 2 + 0.215 * 0.55
+    wheel_width: 0.215       # 215 mm section width
+    wheel_base: 2.555        # 100.6 in
+    wheel_tread: 1.539       # 60.6 in track
+    front_overhang: 0.90     # length 4.277 - wheel_base, front-biased split
+    rear_overhang: 0.822     # 4.277 - 2.555 - 0.90
+    left_overhang: 0.121     # (width 1.781 - tread) / 2
+    right_overhang: 0.121
+    max_steer_angle: 0.43    # atan(wheel_base / (turning_circle 11.2 m / 2))

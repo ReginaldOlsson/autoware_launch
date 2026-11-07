@@ -1,0 +1,24 @@
+# Static transforms from the Boreas bag /tf_static, expressed in base_link.
+# Applanix is x-right, y-forward, z-up. The lidar sits 0.13 m above it.
+sensor_kit_base_link:
+  lidar:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    roll: 0.0
+    pitch: 0.0
+    yaw: -0.785398
+  imu:
+    x: 0.0
+    y: 0.0
+    z: -0.13
+    roll: 0.0
+    pitch: 0.0
+    yaw: -3.099765643786288
+  applanix:
+    x: 0.0
+    y: 0.0
+    z: -0.13
+    roll: 0.0
+    pitch: 0.0
+    yaw: -1.5289693169913918

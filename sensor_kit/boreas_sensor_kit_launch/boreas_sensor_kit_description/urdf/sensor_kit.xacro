@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="sensor_kit_macro" params="parent x y z roll pitch yaw">
+    <xacro:arg name="config_dir" default="$(find boreas_sensor_kit_description)/config"/>
+    <xacro:property name="sensor_kit_base_link" value="sensor_kit_base_link"/>
+    <xacro:property name="calibration" value="${xacro.load_yaml('$(arg config_dir)/sensor_kit_calibration.yaml')}"/>
+
+    <joint name="${sensor_kit_base_link}_joint" type="fixed">
+      <origin rpy="${roll} ${pitch} ${yaw}" xyz="${x} ${y} ${z}"/>
+      <parent link="${parent}"/>
+      <child link="${sensor_kit_base_link}"/>
+    </joint>
+    <link name="${sensor_kit_base_link}"/>
+
+    <xacro:macro name="boreas_sensor_link" params="name">
+      <joint name="${name}_joint" type="fixed">
+        <origin
+          xyz="${calibration['sensor_kit_base_link'][name]['x']}
+               ${calibration['sensor_kit_base_link'][name]['y']}
+               ${calibration['sensor_kit_base_link'][name]['z']}"
+          rpy="${calibration['sensor_kit_base_link'][name]['roll']}
+               ${calibration['sensor_kit_base_link'][name]['pitch']}
+               ${calibration['sensor_kit_base_link'][name]['yaw']}"
+        />
+        <parent link="${sensor_kit_base_link}"/>
+        <child link="${name}"/>
+      </joint>
+      <link name="${name}"/>
+    </xacro:macro>
+
+    <!-- Frame ids match the Boreas bag (lidar, imu, applanix). -->
+    <xacro:boreas_sensor_link name="lidar"/>
+    <xacro:boreas_sensor_link name="imu"/>
+    <xacro:boreas_sensor_link name="applanix"/>
+  </xacro:macro>
+</robot>

@@ -6,6 +6,8 @@
     # Reload the FAR-LIO map after the vehicle moves this far from the last center. [m]
     update_distance: 20.0
 
+    # Whole static map published by the pointcloud map loader. This is the registration target.
+    static_map_topic: /map/pointcloud_map
     partial_map_service: /map/get_partial_pointcloud_map
     initial_map_service: /localization/far_lio/get_pointcloud_map
     update_map_service: /localization/far_lio/update_pointcloud_map

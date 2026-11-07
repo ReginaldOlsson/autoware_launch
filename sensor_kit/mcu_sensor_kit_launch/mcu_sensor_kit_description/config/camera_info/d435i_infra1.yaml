@@ -1,0 +1,22 @@
+# Source topic: /d435i/infra1/image_rect_raw
+# radtan distortion from atv_calib.yaml, stored as ROS plumb_bob with k3 = 0.
+image_width: 640
+image_height: 480
+camera_name: d435i_infra1
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [378.8405476352, 0.0, 322.9797702968, 0.0, 378.2898751394, 241.3189915282, 0.0, 0.0, 1.0]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.000802978, -0.0030538693, 0.0011115466, 0.0005621814, 0.0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [378.8405476352, 0.0, 322.9797702968, 0.0, 0.0, 378.2898751394, 241.3189915282, 0.0, 0.0, 0.0, 1.0, 0.0]

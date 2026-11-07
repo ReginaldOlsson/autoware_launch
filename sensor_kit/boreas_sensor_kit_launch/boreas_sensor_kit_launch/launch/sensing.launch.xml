@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="launch_driver" default="true" description="unused; Boreas data comes from the rosbag"/>
+  <arg name="vehicle_mirror_param_file" default=""/>
+  <arg name="pointcloud_container_name" default="pointcloud_container"/>
+
+  <node pkg="boreas_sensor_kit_launch" exec="boreas_cloud_adapter.py" name="boreas_cloud_adapter" output="both">
+    <param name="input_pointcloud" value="/boreas/pointcloud"/>
+    <param name="output_pointcloud" value="lidar/concatenated/pointcloud"/>
+    <param name="output_frame" value="base_link"/>
+    <param name="input_imu" value="/boreas/imu"/>
+    <param name="output_imu" value="imu/imu_data"/>
+    <param name="imu_frame" value="imu"/>
+    <param name="input_gnss" value="/boreas/gnss/fix"/>
+    <param name="output_gnss" value="gnss/ublox/nav_sat_fix"/>
+  </node>
+</launch>

@@ -107,6 +107,9 @@
         input_pointcloud: "/sensing/lidar/concatenated/pointcloud"
         input_pointcloud_status: ""
         output_odom: "lidar_odometry"
+        # Same roles as NDT: the static pointcloud map is the target, the live
+        # scan is the source. input_map is the adapter service that serves
+        # /map/pointcloud_map. update_map stays false so scans are not inserted.
         input_map: "/localization/far_lio/get_pointcloud_map"
         update_map_srv: "/localization/far_lio/update_pointcloud_map"
       # Pipeline

@@ -1,0 +1,90 @@
+# Poses of each sensor in sensor_kit_base_link.
+# atv_calib.yaml stores T such that p_body = T * p_sensor, with vn100_imu as the body.
+# imu_vn_100 is vn100_imu. livox_frame is mid70. sensor_kit_base_link is that body.
+# Roll, pitch, and yaw are URDF radians: R = Rz(yaw) * Ry(pitch) * Rx(roll).
+# ltpb_tag0 and ltpb_tag1 are calibration boards and are omitted.
+sensor_kit_base_link:
+  imu_vn_100:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  vn200_imu:
+    x: -0.0088119125
+    y: -0.0441866555
+    z: 0.1280674272
+    roll: -0.0073236118
+    pitch: -0.0033581276
+    yaw: -1.5855146668
+  d435i_imu:
+    x: 0.027835229
+    y: -0.0117676813
+    z: 0.0148908373
+    roll: 1.6039203135
+    pitch: 0.0047478771
+    yaw: 1.5754037628
+  d455b_imu:
+    x: 0.0531432961
+    y: -0.0151493492
+    z: 0.1201221116
+    roll: 1.5729111762
+    pitch: -0.0038825166
+    yaw: 1.5771445238
+  os_imu:
+    x: -0.0545208405
+    y: -0.0009639255
+    z: -0.0280858073
+    roll: -3.1314999643
+    pitch: 0.0108546004
+    yaw: 0.0035873623
+  os_sensor:
+    x: -0.0606492291
+    y: -0.0128375442
+    z: -0.0204926069
+    roll: -3.1314999643
+    pitch: 0.0108546004
+    yaw: 0.0035873623
+  livox_frame:
+    x: -0.0105148392
+    y: -0.0089897848
+    z: 0.0373564686
+    roll: -3.1383460706
+    pitch: 0.0168438183
+    yaw: -0.0001711384
+  d435i_infra1:
+    x: 0.046095333
+    y: -0.0130599789
+    z: -0.0053239004
+    roll: 1.6087748549
+    pitch: 0.00157674
+    yaw: 1.5737920553
+  d435i_infra2:
+    x: 0.0459469628
+    y: 0.0366374884
+    z: -0.0054350858
+    roll: 1.6054486129
+    pitch: 0.0015249211
+    yaw: 1.5726984706
+  d455b_color:
+    x: 0.0566667464
+    y: 0.0110064092
+    z: 0.1144034248
+    roll: 1.5766621761
+    pitch: -0.0081984318
+    yaw: 1.5858684457
+  d455b_infra1:
+    x: 0.0561486571
+    y: -0.0486474939
+    z: 0.1152112762
+    roll: 1.5758730872
+    pitch: -0.0050382498
+    yaw: 1.5851471329
+  d455b_infra2:
+    x: 0.0550527731
+    y: 0.0459045596
+    z: 0.115661151
+    roll: 1.575560328
+    pitch: -0.0049480227
+    yaw: 1.5838799598

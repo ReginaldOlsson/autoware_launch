@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Body origin used by the Boreas sensor kit. No mesh; the paper does not publish a body model. -->
+  <link name="base_link"/>
+</robot>
