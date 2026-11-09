@@ -113,7 +113,7 @@ units:
   - path: /autoware/localization/sensor_fusion_status
     type: diag
     node: localization
-    name: ekf_localizer
+    name: ri_ekf_localizer
     timeout: 3.0
 
   # MRM request delegate with extended timeout

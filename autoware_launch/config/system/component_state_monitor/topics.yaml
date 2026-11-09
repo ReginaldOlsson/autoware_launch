@@ -174,7 +174,8 @@
     node_name_suffix: transform_map_to_base_link
     topic: /tf
     frame_id: map
-    child_frame_id: base_link
+    # RI-EKF publishes map -> odom -> base_link. This monitor matches a direct /tf edge.
+    child_frame_id: odom
     best_effort: false
     transient_local: false
     warn_rate: 5.0

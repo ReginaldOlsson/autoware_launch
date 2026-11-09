@@ -1,0 +1,76 @@
+# NDT integration parameters for autoware_ri_ekf_localizer on Boreas.
+# IMU topic is /boreas/imu. Frame imu matches the Boreas sensor kit.
+# A level sample reads about [0, 0, -g], so z is negated after the mount rotation.
+# state_history_duration covers a late NDT pose so it is applied to the IMU history.
+# logging_simulation overrides initialization.initialize_state_from_pose to true at launch.
+
+/**:
+  ros__parameters:
+    node:
+      map_frame: map
+      odom_frame: odom
+      base_frame: base_link
+      imu_frame: imu
+      publish_frequency: 50.0
+      tf_rate: 50.0
+      gravity: 9.80665
+      max_measurement_delay: 0.05
+      state_history_duration: 2.0
+      pose_buffer_duration: 10.0
+      show_debug_info: false
+      activate_on_initial_pose: false
+      diagnostics_publish_frequency: 10.0
+      covariance_floor: 1.0e-9
+      trace_csv_path: ""
+      trace_csv_rate: 20.0
+
+    imu_noise:
+      # Continuous-time densities. Discrete covariance is Phi G Q_c G^T Phi^T dt.
+      sigma_gyro: 0.01
+      sigma_accel: 0.1
+      sigma_bias_gyro: 0.001
+      sigma_bias_accel: 0.01
+      # Slow vertical random walk so a speed breaker is not absorbed into b_a,z.
+      sigma_bias_accel_z: 1.0e-5
+
+    extrinsics:
+      use_tf: true
+      negate_linear_acceleration: true
+      imu_to_base_rpy: [0.0, 0.0, -3.099765643786288]
+      gnss_lever_arm_in_base: [0.0, 0.0, 0.0]
+      velocity_lever_arm_in_base: [0.0, 0.0, 0.0]
+      velocity_sensor_rpy: [0.0, 0.0, 0.0]
+
+    lidar_update:
+      enable: true
+
+    velocity_update:
+      enable: false
+      nonholonomic_stddev: 0.05
+
+    gnss_window:
+      window_size: 50
+      min_keyframe_distance: 0.5
+      yaw_unlock_distance: 5.0
+      sigma_drift: 0.05
+      sigma_drift_z: 0.02
+      gnss_z_variance_scale: 3.0
+      huber_delta: 1.5
+      iterations: 5
+      prior_stddev_yaw: 0.1
+      prior_stddev_xy: 1.0
+      prior_stddev_z: 0.3
+      yaw_lock_variance: 1.0e-12
+
+    initialization:
+      static_init_duration: 0.5
+      static_gyro_threshold: 0.05
+      initialize_state_from_pose: false
+      initial_stddev_xy: 1.0
+      initial_stddev_z: 1.0
+      initial_stddev_roll_pitch: 0.05
+      initial_stddev_yaw: 0.1
+      initial_stddev_velocity: 0.5
+      initial_stddev_bias_gyro: 0.01
+      initial_stddev_bias_accel: 0.1
+      initial_stddev_bias_accel_z: 0.05

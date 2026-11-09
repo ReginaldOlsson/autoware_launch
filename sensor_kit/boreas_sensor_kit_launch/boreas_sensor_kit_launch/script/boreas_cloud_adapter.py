@@ -31,7 +31,7 @@ class BoreasCloudAdapter(Node):
         self._imu_frame = str(self.get_parameter("imu_frame").value)
         sensor_qos = QoSProfile(
             depth=5,
-            reliability=ReliabilityPolicy.BEST_EFFORT,
+            reliability=ReliabilityPolicy.RELIABLE,
             durability=DurabilityPolicy.VOLATILE,
         )
         self._tf_buffer = Buffer()
